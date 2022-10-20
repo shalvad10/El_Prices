@@ -1,0 +1,28 @@
+.user-panel{
+    .info{
+        height: 34px;
+        line-height: 34px;
+    }
+}
+.nav-link{
+    &.disabled {
+        color: #794040 !important;
+    }
+}
+.nav-item {
+    &:hover {
+        .nav-link {
+            background-color: transparent!important;
+            color: #009F4B!important;
+        }
+    }
+}
+.main-sidebar {
+    background-color: #262B3A;
+}
+.menu-open {
+    .nav-link {
+        background-color: transparent!important;
+        color: #009F4B!important;
+    }
+}

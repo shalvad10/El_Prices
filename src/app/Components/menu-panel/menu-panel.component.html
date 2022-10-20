@@ -1,0 +1,50 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <app-logo></app-logo>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img [src]="avatar" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="javascript:void(null);" class="d-block" (click)="userProfile()"> {{ user }} </a>
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+                <!-- <span class="right badge badge-danger">New</span> -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="javascript:void(null);" class="nav-link" (click)="changeRoute('/')">
+              <i class="nav-icon fas fa-solid fa-square-poll-vertical"></i>
+              <p> Dashboard </p>
+            </a>
+          </li>
+          <li class="nav-item" id="users" [ngClass]="{'menu-open': isActive('users')}">
+            <a href="javascript:void(null);" class="nav-link" (click)="changeRoute('users')">
+              <i class="nav-icon fas fa-duotone fa-users"></i>
+              <p> Users </p>
+            </a>
+          </li>
+          <li class="nav-item" id="rank" [ngClass]="{'menu-open': isActive('rank')}">
+            <a href="javascript:void(null);" class="nav-link" (click)="changeRoute('rank')">
+              <i class="nav-icon fas fa-duotone fa-chart-simple"></i>
+              <p> Rank </p>
+            </a>
+          </li>
+          <li class="nav-item" id="games" [ngClass]="{'menu-open': isActive('game')}">
+            <a href="javascript:void(null);" class="nav-link" (click)="changeRoute('game')">
+              <i class="nav-icon fas fa-solid fa-clock-rotate-left"></i>
+              <p> Game </p>
+            </a>
+          </li>
+          <li class="nav-item" id="chat" [ngClass]="{'menu-open': isActive('chat')}">
+            <a href="javascript:void(null);" class="nav-link" (click)="changeRoute('chat')">
+              <i class="nav-icon fas fa-solid fa-message"></i>
+              <p> Chat </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  <!-- /.sidebar-menu -->
+</aside>

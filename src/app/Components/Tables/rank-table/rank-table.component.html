@@ -1,0 +1,27 @@
+<div class="card-body table-responsive p-0" [ngStyle]="{'height': tableHeight}">
+  <table class="table table-hover table-head-fixed text-nowrap">
+    <thead style="z-index: 2;">
+      <tr>
+        <th *ngFor="let row of tableRows"> {{ row }} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData">
+        <td (click)="copy(data.id)"> {{ data.id }} </td>
+        <td> {{ data.friendlyName }} </td>
+        <td> {{ data.minimumGames }} / {{ data.minimumBet }} </td>
+        <td class="levelsCell"> 
+          <span>Level 1 = {{data.level1Percent}}</span>
+          <span>Level 2 = {{data.level2Percent}}</span>
+          <span>Level 3 = {{data.level3Percent}}</span>
+          <span>Level 4 = {{data.level4Percent}}</span>
+          <span>Level 5 = {{data.level5Percent}}</span>
+        </td>
+        <td>
+          <div class="option bin" (click)="delete(data.id, data.name)"></div>
+          <div class="option edit" (click)="edit(data.id)"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

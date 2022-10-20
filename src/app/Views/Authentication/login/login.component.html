@@ -1,0 +1,36 @@
+<div class="flex-row"><div class="login-box">
+    <div class="login-logo">
+      <a href="javascript:void(null);"><b>Destrobit</b></a>
+    </div>
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg"> Login </p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" (keyup.enter)="onEnter()">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="icheck-primary">
+              </div>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-secondary btn-block" (click)="authenticate()" > Login </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

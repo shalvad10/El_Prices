@@ -1,0 +1,99 @@
+<app-universal-view>
+    <div class="row" style="padding-top: 15px;">
+        <div class="col-10 offset-1">
+            <div class="card card-light">
+              <div class="card-header">
+                <h3 class="card-title font_geo large_font">პროდუქტის დამატება</h3>
+              </div>
+              <!-- <form role="form"> -->
+                <div class="card-body">
+                  <div class="row">
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Rank Name</label>
+                      <input type="text" class="form-control" placeholder="პროდუქტის შტრიხკოდი" [(ngModel)]="rankData.friendlyName">
+                      <!-- <span class="validation" *ngIf="!(barCode.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის შტრიხკოდი.
+                      </span> -->
+                    </div>
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Minimum Bets</label>
+                      <input type="text" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.minimumGames">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Minimum Bits</label>
+                      <input type="text" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.minimumBet">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+                    
+                  </div>
+
+                  <div class="row">
+                    
+                    <div class="form-group font_geo medium_font">
+                      <label>Network level 1</label>
+                      <input type="number" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.level1Percent">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Network level 2</label>
+                      <input type="number" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.level2Percent">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Network level 3</label>
+                      <input type="number" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.level3Percent">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Network level 4</label>
+                      <input type="number" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.level4Percent">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+
+                    <div class="form-group font_geo medium_font">
+                      <label>Network level 5</label>
+                      <input type="number" class="form-control" placeholder="პროდიქტის დასახელება" [(ngModel)]="rankData.level5Percent">
+                      <!-- <span class="validation" *ngIf="!(name.length > 0) && showWarnings">
+                        <i class="fas fa-exclamation"></i>
+                        შეიყვანეთ პროდუქციის დასახელება.
+                      </span> -->
+                    </div>
+
+                  </div>
+
+                </div>
+              <!-- </form> -->
+              <div class="card-footer">
+                <!-- [ngClass]="{'disabled': !(selectedCompanyID > 0 && name.length > 0 && barCode.length > 0) && showWarnings}" -->
+                <button type="button"  class="btn btn-primary font_geo small_font" (click)="edit()" > Edit </button>
+              </div>
+            </div>
+        </div>
+    </div>
+  </app-universal-view>

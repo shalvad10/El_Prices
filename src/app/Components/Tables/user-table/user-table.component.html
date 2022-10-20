@@ -1,0 +1,24 @@
+<div class="card-body table-responsive p-0" [ngStyle]="{'height': tableHeight}">
+  <table class="table table-hover table-head-fixed text-nowrap">
+    <thead style="z-index: 2;">
+      <tr>
+        <th *ngFor="let row of tableRows"> {{ row }} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData">
+        <td (click)="copy(data.id)"> {{ data.id }} </td>
+        <td> {{ data.firstName }} {{ data.lastName }} </td>
+        <td> {{ data.userName }} </td>
+        <td> {{ data.country.name }} </td>
+        <td> {{ data.address.length > 0 ? data.address : '-' }} </td>
+        <td class="userStatus"> <span [ngClass]="data.isVerified ? 'yes' : 'no'"> {{ data.isVerified ? 'yes' : 'no' }} </span> </td>
+        <td class="userStatus"> <span [ngClass]="data.isBlocked ? 'yes' : 'no'"> {{ data.isBlocked ? 'yes' : 'no' }} </span> </td>
+        <td>
+          <div class="option bin" (click)="delete(data.id, data.name)"></div>
+          <div class="option edit" (click)="edit(data.id)"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,140 @@
+<app-universal-view *ngIf="user !== null">
+  <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12" style="margin-top: 15px;">
+            <h3 class="card-title"> User Profile </h3>
+          </div>
+          <div class="col-md-12" style="margin-top: 15px;">
+            <div class="card">
+              <div class="card-header p-0">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link" (click)="selectTab('details')" [ngClass]="{'active': selectedTab == 'details'}" data-toggle="tab"> Details </a></li>
+                  <li class="nav-item disabled"><a class="nav-link" [ngClass]="{'active': selectedTab == 'network'}" data-toggle="tab"> Network </a></li>
+                  <li class="nav-item disabled"><a class="nav-link" [ngClass]="{'active': selectedTab == 'activity'}" data-toggle="tab"> Activity </a></li>
+                </ul>
+              </div>
+              
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="tab-pane"[ngClass]="{'active': selectedTab == 'details'}" id="details">
+                    <div class="row">
+                      <div class="col-md-6">
+
+                        <div class="cont">
+                          <div class="title">
+                            <div class="text">
+                              <span> Contact Details</span>
+                            </div>
+                            <div class="button">
+                              <div class="edit-button">
+                                <div class="icon"></div>
+                                <div class="label">
+                                  <i class="fa-solid fa-pencil"></i>
+                                  <span> Edit User </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data">
+                            <div class="row">
+                              <div class="item"> <div class="col-md-6 name"> <span>ID</span></div>               <div class="col-md-6 value"> <span> {{user.id}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Fist Name</span></div>        <div class="col-md-6 value"> <span> {{user.firstName}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Last Name</span></div>        <div class="col-md-6 value"> <span> {{user.lastName}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>UserName</span></div>         <div class="col-md-6 value"> <span> {{user.userName}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>E-mail</span></div>           <div class="col-md-6 value"> <span> {{user.email}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Country</span></div>          <div class="col-md-6 value"> <span> {{user.country.name}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Phone</span></div>            <div class="col-md-6 value"> <span> {{user.phoneNumber}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Address</span></div>          <div class="col-md-6 value"> <span> {{user.address}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Birthday</span></div>         <div class="col-md-6 value"> <span> {{user.dateOfBirth | date: 'dd/MM/yyyy'}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Account Blocked</span></div>  <div class="col-md-6 value"> <span> <div class="userStatus"> <span [ngClass]="user.isBlocked ? 'yes' : 'no'"> {{ user.isBlocked ? 'yes' : 'no' }} </span> </div> </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Account Verified</span></div> <div class="col-md-6 value"> <span> <div class="userStatus"> <span [ngClass]="user.isVerified ? 'yes' : 'no'"> {{ user.isVerified ? 'yes' : 'no' }} </span> </div> </span> </div> </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="cont toggle_cont">
+                          <div class="title">
+                            <div class="text">
+                              <span> Actions</span>
+                            </div>
+                          </div>
+                          <div class="data">
+                            <div class="row">
+                              <div class="item toggle_item">
+                                <div class="col-md-6 toggle">
+                                  <span> Block User </span>
+                                  <label class="switch switch_block">
+                                    <input type="checkbox" disabled>
+                                    <span class="slider round"></span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="item toggle_item">
+                                <div class="col-md-6 toggle">
+                                  <span> Verify User </span>
+                                  <label class="switch switch_verify">
+                                    <input type="checkbox" disabled>
+                                    <span class="slider round"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6">
+
+                        <div class="cont toggle_cont">
+                          <div class="title">
+                            <div class="text">
+                              <span> Rank Details </span>
+                            </div>
+                          </div>
+                          <div class="data">
+                            <div class="row">
+                              <div class="item"> <div class="col-md-6 name"> <span>Rank</span></div>    <div class="col-md-6 value"> <app-dropdown-select [items]="rankData" (select)="selectRank($event)" ></app-dropdown-select> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Noob</span></div>    <div class="col-md-6 value"> <span> - </span>            </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Bronze</span></div>  <div class="col-md-6 value"> <span> - </span>            </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Silver</span></div>  <div class="col-md-6 value"> <span> - </span>            </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Gold</span></div>    <div class="col-md-6 value"> <span> - </span>            </div> </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="cont toggle_cont">
+                          <div class="title">
+                            <div class="text">
+                              <span> Balance Details </span>
+                            </div>
+                          </div>
+                          <div class="data">
+                            <div class="row">
+                              <div class="item"> <div class="col-md-6 name"> <span>Total Balance</span></div>   <div class="col-md-6 value"> <span> {{userBalance}} </span> </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Total Bet</span></div>       <div class="col-md-6 value"> <span> - </span>               </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Total Deposit</span></div>   <div class="col-md-6 value"> <span> - </span>               </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Total Withdraw</span></div>  <div class="col-md-6 value"> <span> - </span>               </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Total Earn</span></div>      <div class="col-md-6 value"> <span> - </span>               </div> </div>
+                              <div class="item"> <div class="col-md-6 name"> <span>Total Referal</span></div>   <div class="col-md-6 value"> <span> - </span>               </div> </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane"[ngClass]="{'active': selectedTab == 'network'}" id="network">
+                    
+                  </div>
+                  <div class="tab-pane"[ngClass]="{'active': selectedTab == 'activity'}" id="activity">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</app-universal-view>

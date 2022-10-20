@@ -1,0 +1,32 @@
+<div class="card-body table-responsive p-0" [ngStyle]="{'height': tableHeight}">
+  <div class="table-header">
+    <div class="dateText">
+      Game history (01/12/2021 - 08/12/2021)
+    </div>
+    <div class="dateBtn">
+      <div class="btn btn-secondary disabled"> Change date </div>
+    </div>
+  </div>
+  <table class="table table-hover table-head-fixed text-nowrap">
+    <thead style="z-index: 2;">
+      <tr>
+        <th *ngFor="let row of tableRows"> {{ row }} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData">
+        <td (click)="copy(data.id)"> {{ data.id }} </td>
+        <td> {{ data.bet }} </td>
+        <td> {{ data.bust }} </td>
+        <td> {{ data.profit }} </td>
+        <td> {{ data.payout }} </td>
+        <td class="smallCell"> {{ data.hash }} </td>
+        <td class="gameFinished"> <span [ngClass]="gameFinished(data.status) ? 'yes' : 'no'"> {{ gameFinished(data.status) ? 'yes' : 'no' }} </span> </td>
+        <td>
+          <div class="option bin" (click)="delete(data.id, data.name)"></div>
+          <div class="option edit" (click)="edit(data.id)"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

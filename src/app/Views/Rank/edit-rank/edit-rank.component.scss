@@ -1,0 +1,40 @@
+input[type=date]::-webkit-inner-spin-button, input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+    
+}
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+::ng-deep .ng-dropdown-panel {
+    margin-top: 60px !important;
+}
+
+.table{
+    padding: 15px 10px;
+}
+
+.card-header, .card-footer {
+    background-color: #343C48 !important;
+    color: #FFF !important;
+}
+.card-body {
+    background-color: #1B212B;
+}
+
+label {
+    color: #FFF;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    .form-group {
+        flex: 1;
+    }
+}

@@ -1,0 +1,15 @@
+<div class="cont" *ngIf="dataLoaded">
+    <div class="item selected" [id]="selected.id" (click)="toggleDropdown()">
+        <div class="flag"></div>
+        <div class="name">{{ selected.name }}</div>
+    </div>
+
+    <i [ngClass]="[oppened ? 'rotated' : '']" class="arrow fa-solid fa-caret-down"></i>
+
+    <div class="items" [ngClass]="[oppened ? 'show' : '']">
+        <div class="item" *ngFor="let item of _items" [id]="item.id" (click)="selectItem(item)">
+            <div class="flag"></div>
+            <div class="name">{{ item.name }}</div>
+        </div>
+    </div>
+</div>

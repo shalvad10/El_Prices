@@ -1,0 +1,15 @@
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1B212B;
+    .card-body {
+        background-color: #2C3442;
+        input {
+            background-color: #2C3442;
+            color: #FFF;
+        }
+    }
+}
